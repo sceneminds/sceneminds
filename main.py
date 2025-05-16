@@ -11,7 +11,7 @@ from telegram.ext import (
 
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 PORT = int(os.environ.get("PORT", "10000"))
-WEBHOOK_URL = f"https://sceneminds.onrender.com/{BOT_TOKEN}"
+WEBHOOK_URL = f"https://sceneminds.onrender.com/"
 
 facts = [
     "Факт: Мозг потребляет 20% всей энергии тела.",
@@ -19,7 +19,7 @@ facts = [
     "Факт: Вода — единственное вещество на Земле, встречающееся в природе в трёх состояниях.",
 ]
 
-intro_text = "Здорово, братишка! Я твой SceneMinds Helper. Выбери, что хочешь:"
+intro_text = "Здорово, братишка! Я твой сценемайнс-бот. Выбери, что хочешь:"
 reply_keyboard = [["Интересный факт"], ["Реклама"], ["Контакты"]]
 markup = ReplyKeyboardMarkup(reply_keyboard, resize_keyboard=True)
 
@@ -62,5 +62,4 @@ if __name__ == "__main__":
         listen="0.0.0.0",
         port=PORT,
         webhook_url=WEBHOOK_URL,
-        path=f"/{BOT_TOKEN}"
     )
