@@ -1,7 +1,7 @@
 import os
+import random
 from telegram import Update, ReplyKeyboardMarkup
 from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, ContextTypes, filters
-import random
 
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 
@@ -25,10 +25,9 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     elif text == "Реклама":
         await update.message.reply_text("Реклама: Хочешь попасть сюда? Пиши в инсту: @scenemindsreal")
     elif text == "Контакты":
-        await update.message.reply_text("Контакты:
-Telegram: @scenemindsreal
-Instagram: scenemindsreal
-Email: adilflow1n@gmail.com")
+        await update.message.reply_text(
+            "Контакты:\nTelegram: @scenemindsreal\nInstagram: scenemindsreal\nEmail: adilflow1n@gmail.com"
+        )
     else:
         await update.message.reply_text("Выбери кнопку или напиши /start")
 
