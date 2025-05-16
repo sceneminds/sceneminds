@@ -19,7 +19,7 @@ facts = [
     "Факт: Вода — единственное вещество на Земле, встречающееся в природе в трёх состояниях.",
 ]
 
-intro_text = "Здорово, братишка! Я твой Sceneminds Helper. Выбери, что хочешь:"
+intro_text = "Здорово, братишка! Я твой SceneMinds Helper. Выбери, что хочешь:"
 reply_keyboard = [["Интересный факт"], ["Реклама"], ["Контакты"]]
 markup = ReplyKeyboardMarkup(reply_keyboard, resize_keyboard=True)
 
@@ -59,8 +59,8 @@ if __name__ == "__main__":
     app.add_handler(MessageHandler(filters.StatusUpdate.NEW_CHAT_MEMBERS, greet_new_member))
 
     app.run_webhook(
-    listen="0.0.0.0",
-    port=PORT,
-    webhook_url=WEBHOOK_URL,
-    webhook_path=f"/{BOT_TOKEN}"
-)
+        listen="0.0.0.0",
+        port=PORT,
+        webhook_url=WEBHOOK_URL,
+        path=f"/{BOT_TOKEN}"
+    )
